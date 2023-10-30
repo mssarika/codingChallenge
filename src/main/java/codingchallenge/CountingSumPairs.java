@@ -1,6 +1,6 @@
 package codingchallenge;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CountingSumPairs {
@@ -15,13 +15,18 @@ public class CountingSumPairs {
 	public void findSumPairs(int array[],int sum)
 	{
 		int count=0;
-		List numbers=Arrays.asList(array);
+		List<Integer> numbers = new ArrayList<Integer>(array.length);
+		for (int i : array)
+		{
+			numbers.add(i);
+		}
+
 		for(int i=0;i<numbers.size();i++)
 		{
-			int pairFirstElement=(Integer.valueOf((Integer)numbers.get(i)));
+			int pairFirstElement=(numbers.get(i)).intValue();
 			for(int j=i+1;j<numbers.size();j++)
 			{
-				if(pairFirstElement+(Integer.valueOf((Integer)numbers.get(i)))==sum)
+				if(pairFirstElement+(numbers.get(i)).intValue()==sum)
 				{
 					count++;
 					numbers.remove(j);
@@ -30,5 +35,4 @@ public class CountingSumPairs {
 		}
 		System.out.println("Number of pairs for Sum "+sum+" is "+count);
 	}
-	
 }
