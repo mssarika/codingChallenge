@@ -26,7 +26,7 @@ public class CountingSumPairs {
 			int pairFirstElement=(numbers.get(i)).intValue();
 			for(int j=i+1;j<numbers.size();j++)
 			{
-				if(pairFirstElement+(numbers.get(i)).intValue()==sum)
+				if(pairFirstElement+(numbers.get(j)).intValue()==sum)
 				{
 					count++;
 					numbers.remove(j);
